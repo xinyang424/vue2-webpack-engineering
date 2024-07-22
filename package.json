@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "cross-env NODE_ENV=development webpack-dev-server",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "build": "cross-env NODE_ENV=production webpack"
   },
   "keywords": [],
@@ -14,12 +14,14 @@
     "clean-webpack-plugin": "^4.0.0",
     "cross-env": "^7.0.3",
     "css-loader": "^7.1.2",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.6.0",
     "mini-css-extract-plugin": "^2.9.0",
     "progress-bar-webpack-plugin": "^2.1.0",
     "sass": "^1.77.8",
     "sass-loader": "^14.2.1",
     "style-loader": "^4.0.0",
+    "url-loader": "^4.1.1",
     "vue-loader": "^15.11.1",
     "vue-template-compiler": "^2.7.16",
     "webpack": "^5.93.0",
@@ -27,8 +29,9 @@
     "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
+    "compression-webpack-plugin": "^11.1.0",
     "element-ui": "^2.15.14",
-    "vue": "2",
+    "vue": "^2.7.16",
     "vue-router": "^3.6.5"
   }
 }

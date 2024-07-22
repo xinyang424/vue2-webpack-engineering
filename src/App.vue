@@ -36,21 +36,51 @@
     </do-aside>
     <do-main>
       <!-- <router-view></router-view> -->
-      <do-button type="default">默认按钮</do-button>
-      <do-button type="primary">主要按钮</do-button>
-      <do-button type="success">成功按钮</do-button>
-      <do-button type="info">信息按钮</do-button>
-      <do-button type="warning">警告按钮</do-button>
-      <do-button type="danger">危险按钮</do-button>
+      <el-row>
+        <do-button type="default">默认按钮</do-button>
+        <do-button type="primary">主要按钮</do-button>
+        <do-button type="success">成功按钮</do-button>
+        <do-button type="info">信息按钮</do-button>
+        <do-button type="warning">警告按钮</do-button>
+        <do-button type="danger">危险按钮</do-button>
+      </el-row>
+
+      <el-row>
+        <el-button icon="el-icon-search" circle></el-button>
+        <el-button type="primary" icon="el-icon-edit" circle></el-button>
+        <el-button type="success" icon="el-icon-check" circle></el-button>
+        <el-button type="info" icon="el-icon-message" circle></el-button>
+        <el-button type="warning" icon="el-icon-star-off" circle></el-button>
+        <el-button type="danger" icon="el-icon-delete" circle></el-button>
+      </el-row>
+      <el-row>
+        <img src="./assets/promise.jpg" alt="promise" title="此文件以静态资源文件进行存储" class="promise" />
+        <img src="./assets/logo.png" alt="logo" title="此文件以base64编码存储" class="logo" />
+      </el-row>
     </do-main>
   </do-container>
 </template>
 
 <style lang="scss" scoped>
+.do-aside {
+  .el-menu {
+    height: 100%;
+  }
+}
 .do-main {
   padding: 14px;
-  .do-button {
-    margin-right: 14px;
+  .el-row {
+    margin-bottom: 20px;
+    .do-button {
+      margin-right: 14px;
+    }
+    img {
+      display: block;
+      cursor: pointer;
+    }
+    .promise {
+      width: 500px;
+    }
   }
 }
 </style>

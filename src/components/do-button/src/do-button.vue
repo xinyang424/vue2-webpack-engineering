@@ -26,9 +26,6 @@ export default {
       default: false,
     },
   },
-  mounted() {
-    console.log(this.size);
-  },
   computed: {
     buttonClass() {
       return {

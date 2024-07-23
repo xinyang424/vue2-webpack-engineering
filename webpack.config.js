@@ -11,6 +11,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
+const LifecycleLoggerPlugin = require("./webpack/LifecycleLoggerPlugin.js");
 const isProd = process.env.NODE_ENV === "production";
 
 const webpackConfig = {
@@ -18,7 +19,7 @@ const webpackConfig = {
     ignored: /node_modules/, //不监听的 node_modules 目录下的文件
   },
   mode: "production",
-  entry: "./src/main.js",
+  entry: "./src/test.js",
   output: {
     publicPath: "/",
     path: path.resolve(process.cwd(), "dist"),
@@ -82,6 +83,12 @@ const webpackConfig = {
       {
         test: /\.vue$/,
         loader: "vue-loader",
+      },
+      // 使用自己的 loader 处理 js 文件
+      {
+        test: /\.js$/,
+        use: path.resolve(__dirname, "./webpack/my-loader.js"), // 使用自定义 Loader
+        exclude: /node_modules/,
       },
       // 处理css文件
       {
@@ -155,6 +162,8 @@ const webpackConfig = {
       threshold: 8192, //只有大小超过该值的文件才会被压缩，单位为字节。
       minRatio: 0.8, //只有压缩率小于这个值的文件才会被压缩。
     }),
+    // 使用自己定义的 plugins
+    new LifecycleLoggerPlugin(),
   ],
 };
 

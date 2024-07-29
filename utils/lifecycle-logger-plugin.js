@@ -46,19 +46,6 @@ class LifecycleLoggerPlugin {
 
     compiler.hooks.compilation.tap("LifecycleLoggerPlugin", compilation => {
       console.log("\n12. compilation\n");
-      //   compilation.hooks.buildModule.tap("LifecycleLoggerPlugin", () => {
-      //     console.log("\n10.1 buildModule\n");
-      //   });
-      //   compilation.hooks.normalModuleLoader.tap("LifecycleLoggerPlugin", () => {
-      //     console.log("\n10.2. normalModuleLoader\n");
-      //   });
-      //   compilation.hooks.normalModuleFactory.tapAsync("LifecycleLoggerPlugin", () => {
-      //     console.log("\n10.3. normalModuleFactory\n");
-      //   });
-
-      //   compilation.hooks.contextModuleFactory.tap("LifecycleLoggerPlugin", () => {
-      //     console.log("\n10.3 contextModuleFactory\n");
-      //   });
     });
 
     compiler.hooks.make.tapAsync("LifecycleLoggerPlugin", (compilation, callback) => {
@@ -80,24 +67,8 @@ class LifecycleLoggerPlugin {
       callback();
     });
 
-    compiler.hooks.afterEmit.tapAsync("LifecycleLoggerPlugin", (compilation, callback) => {
-      console.log("\n17. afterEmit\n");
-      callback();
-    });
-
-    compiler.hooks.assetEmitted.tapAsync("LifecycleLoggerPlugin", (str, assetEmittedInfo, callback) => {
-      console.log("\n18. assetEmitted\n");
-      console.log(str);
-      console.log("\n");
-      console.log(callback);
-      callback();
-    });
-
     compiler.hooks.done.tap("LifecycleLoggerPlugin", stats => {
-      console.log("\n19. done\n");
-    });
-    compiler.hooks.additionalPass.tap("LifecycleLoggerPlugin", stats => {
-      console.log("\n20. additionalPass\n");
+      console.log("\n17. done\n");
     });
   }
 }

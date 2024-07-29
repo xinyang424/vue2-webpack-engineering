@@ -1,0 +1,18 @@
+body {
+  background-clip: text;
+}
+
+::placeholder {
+  color: #333;
+}
+
+:fullscreen {
+  color: red;
+}
+
+:is(input, button):is(:hover, :focus) {
+  color: red;
+}
+.container {
+  background-color: #f0f0f0;
+}

@@ -15,8 +15,8 @@ const webpackConfig = {
     path: path.resolve(__dirname, "lib"),
     filename: "polestar-ui.common.js",
     chunkFilename: "[id].cjs",
-    libraryExport: "default",
-    library: "POLESTAR",
+    // libraryExport: "default",
+    // library: "POLESTAR",
     libraryTarget: "commonjs2",
   },
   resolve: {
